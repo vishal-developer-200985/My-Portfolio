@@ -7,61 +7,44 @@
     <style>
         /* CSS for images and content */
         .card {
-            display: flex;
+            width: 300px;
+            height: 300px;
+            margin: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            margin-bottom: 20px;
-            max-width: 600px;
-            margin: 0 auto;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .card-image {
-            flex: 0 0 auto;
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
-        }
-        .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .card-content {
-            flex: 1;
-            padding: 20px;
-        }
-        .card-heading {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .card-subheading {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .divider {
-            width: 100%;
-            height: 1px;
-            background-color: #ccc;
-            margin: 20px 0;
-        }
-        /* CSS for dialog */
+        /* Full screen dialog */
         .dialog-overlay {
             display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .dialog-content {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
             padding: 20px;
-            overflow: hidden;
+            text-align: center;
         }
         .close-btn {
             position: absolute;
@@ -70,16 +53,18 @@
             cursor: pointer;
         }
         .dialog-image {
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
-            float: left;
-            margin-right: 20px;
-        }
-        .dialog-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -87,70 +72,44 @@
     <h1>My Android Portfolio</h1>
     
     <!-- First Image Section -->
-    <div class="card" onclick="showDialog('AIR - Athlete In Recruitment', 'Subheading 1', 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg')">
-        <div class="card-image">
-            <img src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment">
-        </div>
-        <div class="card-content">
-            <h2 class="card-heading">AIR - Athlete In Recruitment</h2>
-            <p class="card-subheading">Subheading 1</p>
-        </div>
+    <div class="card">
+        <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment" onclick="showDialog('https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg', 'AIR - Athlete In Recruitment', 'Subheading 1')">
     </div>
-    <div class="divider"></div>
 
     <!-- Second Image Section -->
-    <div class="card" onclick="showDialog('Farmers First', 'Subheading 2', 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg')">
-        <div class="card-image">
-            <img src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First">
-        </div>
-        <div class="card-content">
-            <h2 class="card-heading">Farmers First</h2>
-            <p class="card-subheading">Subheading 2</p>
-        </div>
+    <div class="card">
+        <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First" onclick="showDialog('https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg', 'Farmers First', 'Subheading 2')">
     </div>
-    <div class="divider"></div>
 
     <!-- Add more sections for additional images -->
 
-    <!-- Dialog Overlay -->
-    <div class="dialog-overlay" id="dialogOverlay">
-        <!-- Dialog Content -->
+    <!-- Full screen dialog -->
+    <div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog()">
         <div class="dialog-content">
             <span class="close-btn" onclick="closeDialog()">&times;</span>
-            <div class="dialog-image">
-                <img id="dialogImage" src="" alt="">
-            </div>
-            <div class="dialog-text">
-                <h2 id="dialogHeading"></h2>
-                <p id="dialogSubheading"></p>
-            </div>
+            <img class="dialog-image" id="dialogImage" src="" alt="">
+            <div class="title" id="dialogTitle"></div>
+            <div class="subtitle" id="dialogSubtitle"></div>
         </div>
     </div>
 
     <script>
-        // Function to show dialog with content
-        function showDialog(heading, subheading, imageUrl) {
-            // Get dialog elements
+        // Function to show dialog with image
+        function showDialog(imageUrl, title, subtitle) {
             var dialogOverlay = document.getElementById("dialogOverlay");
-            var dialogHeading = document.getElementById("dialogHeading");
-            var dialogSubheading = document.getElementById("dialogSubheading");
             var dialogImage = document.getElementById("dialogImage");
+            var dialogTitle = document.getElementById("dialogTitle");
+            var dialogSubtitle = document.getElementById("dialogSubtitle");
 
-            // Set dialog content
-            dialogHeading.textContent = heading;
-            dialogSubheading.textContent = subheading;
             dialogImage.src = imageUrl;
-
-            // Show dialog
-            dialogOverlay.style.display = "block";
+            dialogTitle.textContent = title;
+            dialogSubtitle.textContent = subtitle;
+            dialogOverlay.style.display = "flex";
         }
 
         // Function to close dialog
         function closeDialog() {
-            // Get dialog element
             var dialogOverlay = document.getElementById("dialogOverlay");
-
-            // Close dialog
             dialogOverlay.style.display = "none";
         }
     </script>
