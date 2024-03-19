@@ -52,7 +52,7 @@
             text-align: center;
             max-height: 80%;
             overflow-y: auto; /* Enable vertical scrollbar if content exceeds max-height */
-    display: flex;
+        display: flex;
     flex-direction: row;
     align-items: center;
         }
@@ -68,17 +68,21 @@
 }
 
 .dialog-image {
-    max-width: 100%;
+     max-width: 200px; /* Custom size */
+    max-height: 200px; /* Custom size */
+    width: auto;
     height: auto;
 }
 
 .dialog-text {
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
 }
         .title {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-bottom: 10px; /* Add margin between title and subtitle */
         }
         .subtitle {
             font-size: 18px;
