@@ -6,16 +6,28 @@
     <title>My App Screenshots</title>
     <style>
         /* CSS for images and content */
-        .screenshot {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 20px; /* Add some spacing between images */
-        }
         .screenshot-container {
-            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align items to the start and end */
+            align-items: center; /* Center items vertically */
             margin-bottom: 40px; /* Add some spacing between sections */
+            max-width: 600px; /* Set a maximum width for the container */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+        .screenshot-info {
+            flex: 1; /* Take up remaining space */
+        }
+        .screenshot-heading {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .screenshot-subheading {
+            font-size: 18px;
+            color: #666;
+        }
+        .screenshot {
+            width: 300px; /* Set width of the image */
+            height: 200px; /* Set height of the image */
         }
         .divider {
             width: 100%;
@@ -30,19 +42,23 @@
     
     <!-- First Image Section -->
     <div class="screenshot-container">
-        <h2>AIR - Athlete In Recruitment</h2>
-        <p>Subheading 1</p>
-        <img class="screenshot" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment" style="width: 300px; height: 200px;">
-        <div class="divider"></div>
+        <div class="screenshot-info">
+            <h2 class="screenshot-heading">AIR - Athlete In Recruitment</h2>
+            <p class="screenshot-subheading">Subheading 1</p>
+        </div>
+        <img class="screenshot" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment">
     </div>
+    <div class="divider"></div>
 
     <!-- Second Image Section -->
     <div class="screenshot-container">
-        <h2>Farmers First</h2>
-        <p>Subheading 2</p>
-        <img class="screenshot" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First" style="width: 300px; height: 200px;">
-        <div class="divider"></div>
+        <div class="screenshot-info">
+            <h2 class="screenshot-heading">Farmers First</h2>
+            <p class="screenshot-subheading">Subheading 2</p>
+        </div>
+        <img class="screenshot" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First">
     </div>
+    <div class="divider"></div>
 
     <!-- Add more sections for additional images -->
 
