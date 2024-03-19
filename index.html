@@ -138,6 +138,12 @@
             var dialogOverlay = document.getElementById("dialogOverlay");
             dialogOverlay.style.display = "none";
         }
+
+        // Hide dialog overlay when the page finishes loading
+        window.addEventListener("load", function() {
+            var dialogOverlay = document.getElementById("dialogOverlay");
+            dialogOverlay.style.display = "none";
+        });
     </script>
 </body>
 </html>
