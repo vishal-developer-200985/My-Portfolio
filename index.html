@@ -134,30 +134,33 @@
     </div>
 
     <!-- Full screen dialog -->
- <div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog()">
-        <div class="dialog-content">
-            <span class="close-btn" onclick="closeDialog()">&times;</span>
+ <!-- Full screen dialog -->
+<div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog()">
+    <div class="dialog-content">
+        <span class="close-btn" onclick="closeDialog()">&times;</span>
+        <div class="dialog-image-container">
             <img class="dialog-image" id="dialogImage" src="" alt="">
-            <div class="dialog-text">
-                <div class="title" id="dialogTitle"></div>
-                <div class="subtitle" id="dialogSubtitle"></div>
-            </div>
+        </div>
+        <div class="dialog-text">
+            <div class="title" id="dialogTitle"></div>
+            <div class="subtitle" id="dialogSubtitle"></div>
         </div>
     </div>
+</div>
 
     <script>
         // Function to show dialog with image
        function showDialog(imageUrl, title, subtitle) {
-            var dialogOverlay = document.getElementById("dialogOverlay");
-            var dialogImage = document.getElementById("dialogImage");
-            var dialogTitle = document.getElementById("dialogTitle");
-            var dialogSubtitle = document.getElementById("dialogSubtitle");
+    var dialogOverlay = document.getElementById("dialogOverlay");
+    var dialogImage = document.getElementById("dialogImage");
+    var dialogTitle = document.getElementById("dialogTitle");
+    var dialogSubtitle = document.getElementById("dialogSubtitle");
 
-            dialogImage.src = imageUrl;
-            dialogTitle.textContent = title;
-            dialogSubtitle.textContent = subtitle;
-            dialogOverlay.style.display = "flex";
-        }
+    dialogImage.src = imageUrl; // Set image source
+    dialogTitle.textContent = title;
+    dialogSubtitle.textContent = subtitle;
+    dialogOverlay.style.display = "flex";
+}
 
         // Function to close dialog
         function closeDialog() {
