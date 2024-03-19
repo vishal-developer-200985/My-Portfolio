@@ -104,39 +104,39 @@
     
     <div class="card-container">
         <!-- Image Sections -->
-        <div class="card" onclick="showDialog(cardData[0])">
+        <div class="card" onclick="openLink(cardData[0])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/Bugaa.jpg" alt="Bugaa">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[1])">
+        <div class="card" onclick="openLink(cardData[1])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/DTD.jpg" alt="DTD">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[2])">
+        <div class="card" onclick="openLink(cardData[2])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[3])">
+        <div class="card" onclick="openLink(cardData[3])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/GlamAfric.jpg" alt="GlamAfric">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[4])">
+        <div class="card" onclick="openLink(cardData[4])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/INTELLITHON.jpg" alt="INTELLITHON">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[5])">
+        <div class="card" onclick="openLink(cardData[5])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/NOK%20ART.jpg" alt="NOK ART">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[6])">
+        <div class="card" onclick="openLink(cardData[6])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/TiffinDaddy.jpg" alt="Tiffin Daddy">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[7])">
+        <div class="card" onclick="openLink(cardData[7])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/TrulyMadly.jpg" alt="TrulyMadly">
         </div>
         
-        <div class="card" onclick="showDialog(cardData[8])">
+        <div class="card" onclick="openLink(cardData[8])">
             <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/VOKI.jpg" alt="VOKI">
         </div>
     </div>
@@ -161,50 +161,63 @@
         {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/Bugaa.jpg',
             title: 'BUGAA',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.emmanuel.zapp'
         },
         {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/DTD.jpg',
             title: 'DTD',
-            subtitle: '...'
+            subtitle: '...',
+            link: ' https://play.google.com/store/apps/details?id=com.mjdistillers.drinkthedrink'
         },
          {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg',
             title: 'Farmers First',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.farmers.first'
         },
          {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/GlamAfric.jpg',
             title: 'GlamAfric',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.chayselab.glamafric'
         },
              {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/INTELLITHON.jpg',
             title: 'Intellithon',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.intellithononline.intellith'
         },
              {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/NOK%20ART.jpg',
             title: 'NOK ART',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.nok'
         },
             {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/TiffinDaddy.jpg',
             title: 'Tiffin Daddy',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.app.td.tiffindaddy'
         },
              {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/TrulyMadly.jpg',
             title: 'TrulyMadly - Indian Dating App',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.oddcast.android.voki'
         },
              {
             imageUrl: 'https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/VOKI.jpg',
             title: 'VOKI',
-            subtitle: '...'
+            subtitle: '...',
+            link: 'https://play.google.com/store/apps/details?id=com.oddcast.android.voki'
         },
     ];
 
+        // Function to open link in a new tab
+    function openLink(data) {
+        window.open(data.link, '_blank');
+    }
         
         // Function to show dialog with image
        function showDialog(data) {
