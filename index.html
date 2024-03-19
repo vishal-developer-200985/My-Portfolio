@@ -52,6 +52,9 @@
             text-align: center;
             max-height: 80%;
             overflow-y: auto; /* Enable vertical scrollbar if content exceeds max-height */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
         }
         .close-btn {
             position: absolute;
@@ -59,10 +62,19 @@
             right: 10px;
             cursor: pointer;
         }
-        .dialog-image {
-            width: 100%;
-            height: auto;
-        }
+        .dialog-image-container {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.dialog-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.dialog-text {
+    flex: 1 1 auto;
+}
         .title {
             font-size: 24px;
             font-weight: bold;
@@ -110,11 +122,12 @@
     </div>
 
     <!-- Full screen dialog -->
-    <!-- Full screen dialog -->
 <div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog()">
     <div class="dialog-content">
         <span class="close-btn" onclick="closeDialog()">&times;</span>
-        <img class="dialog-image" id="dialogImage" src="" alt="">
+        <div class="dialog-image-container">
+            <img class="dialog-image" id="dialogImage" src="" alt="">
+        </div>
         <div class="dialog-text">
             <div class="title" id="dialogTitle"></div>
             <div class="subtitle" id="dialogSubtitle"></div>
