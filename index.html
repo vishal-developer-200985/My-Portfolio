@@ -6,9 +6,14 @@
     <title>My App Screenshots</title>
     <style>
         /* CSS for images and content */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+        }
         .card {
-            width: 300px;
-            height: 300px;
+            width: calc(50% - 20px); /* 50% width with some spacing between cards */
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -73,17 +78,19 @@
 <body>
     <h1>My Android Portfolio</h1>
     
-    <!-- First Image Section -->
-    <div class="card">
-        <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment" onclick="showDialog('https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg', 'AIR - Athlete In Recruitment', 'Subheading 1')">
-    </div>
+    <div class="card-container">
+        <!-- First Image Section -->
+        <div class="card" onclick="showDialog('https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg', 'AIR - Athlete In Recruitment', 'Subheading 1')">
+            <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment">
+        </div>
 
-    <!-- Second Image Section -->
-    <div class="card">
-        <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First" onclick="showDialog('https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg', 'Farmers First', 'Subheading 2')">
-    </div>
+        <!-- Second Image Section -->
+        <div class="card" onclick="showDialog('https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg', 'Farmers First', 'Subheading 2')">
+            <img class="card-image" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First">
+        </div>
 
-    <!-- Add more sections for additional images -->
+        <!-- Add more sections for additional images -->
+    </div>
 
     <!-- Full screen dialog -->
     <div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog()">
