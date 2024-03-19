@@ -5,19 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My App Screenshots</title>
     <style>
-        /* CSS for image */
-        img {
+        /* CSS for images and content */
+        .screenshot {
             max-width: 100%;
             height: auto;
-            display: block; /* Ensures the image doesn't leave extra space below */
-            margin: 0 auto; /* Centers the image horizontally */
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px; /* Add some spacing between images */
+        }
+        .screenshot-container {
+            text-align: center;
+            margin-bottom: 40px; /* Add some spacing between sections */
+        }
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
     <h1>My Android Portfolio</h1>
-    <div>
-       <img src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR">
+    
+    <!-- First Image Section -->
+    <div class="screenshot-container">
+        <h2>AIR - Athlete In Recruitment</h2>
+        <p>Subheading 1</p>
+        <img class="screenshot" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/AIR.jpg" alt="AIR - Athlete In Recruitment">
+        <div class="divider"></div>
     </div>
+
+    <!-- Second Image Section -->
+    <div class="screenshot-container">
+        <h2>Farmers First</h2>
+        <p>Subheading 2</p>
+        <img class="screenshot" src="https://raw.githubusercontent.com/vishal-developer-200985/My-Portfolio/main/Portfolio/Android/FarmersFirst.jpg" alt="Farmers First">
+        <div class="divider"></div>
+    </div>
+
+    <!-- Add more sections for additional images -->
+
 </body>
 </html>
