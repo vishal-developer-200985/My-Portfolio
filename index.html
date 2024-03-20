@@ -236,30 +236,6 @@
         window.open(data.link, '_blank');
     }
         
-        // Function to show dialog with image
-       function showDialog(data) {
-        var dialogOverlay = document.getElementById("dialogOverlay");
-        var dialogImage = document.getElementById("dialogImage");
-        var dialogTitle = document.getElementById("dialogTitle");
-        var dialogSubtitle = document.getElementById("dialogSubtitle");
-
-        dialogImage.src = data.imageUrl; // Set image source
-        dialogTitle.textContent = data.title;
-        dialogSubtitle.textContent = data.subtitle;
-        dialogOverlay.style.display = "flex";
-    }
-
-        // Function to close dialog
-        function closeDialog() {
-            var dialogOverlay = document.getElementById("dialogOverlay");
-            dialogOverlay.style.display = "none";
-        }
-
-        // Hide dialog overlay when the page finishes loading
-        window.addEventListener("load", function() {
-            var dialogOverlay = document.getElementById("dialogOverlay");
-            dialogOverlay.style.display = "none";
-        });
     </script>
 </body>
 </html>
